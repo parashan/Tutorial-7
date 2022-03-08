@@ -18,7 +18,7 @@ async function logout() {
         if(!result.ok){
             throw new Error(result.statusText);
         }
-        // window.location.replace('login');
+        window.location.replace('login');
     }catch(error){
         const alert = make_alert(error);
         document.querySelector("#alert-box").append(alert);
@@ -32,10 +32,12 @@ async function logout() {
     }
 }
 function loadNavbar(json){
-    const pp = document.getElementById('profilePicture');
-    pp.src = json.photo
+    if(json.photo){
+        const pp = document.getElementById('profilePicture');
+        pp.src = json.photo        
+    }
     const welcome = document.getElementById('welcome-navbar');
-    welcome.innerHTML = `Welcome ${json.username}`;
+    welcome.innerHTML = `Welcome ${json.first_name} ${json.last_name}`;
     const signout = document.getElementById('signout');
     signout.innerHTML = "Sign out";
     signout.onclick=logout;
@@ -50,8 +52,8 @@ function loadNavbarGuest(){
     
 }
 function fillData(json){
-    
-    changeEditProfilePicture(json.photo);
+    if(json.photo)
+        changeEditProfilePicture(json.photo);
     loadNavbar(json);
     document.querySelector('#inputUser').value = json.username;
     document.querySelector('#inputemail').value = json.email;

@@ -58,7 +58,7 @@
                 </form>                    
                 <div class="dropdown">
                     <a class="nav-link dropdown-toggle ms-1 text-end" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img id="profilePicture" src="" class="rounded-circle" alt="Profile" width="30" height="30">
+                        <img id="profilePicture" src="{% static 'site_pages/empty.jpg' %}" class="rounded-circle" alt="Profile" width="30" height="30">
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end profile-dropdown" aria-labelledby="profileDropdown">
                         <li class="dropdown-item" id="welcome-navbar"></li>
@@ -82,13 +82,13 @@
                                 <h2 class="card-title">
                                     Edit Profile
                                 </h2>
-                                <form onsubmit=submitEdit(event) id="edit_profile">
+                                <form id="edit_profile">
                                     <div class="container-fluid">
                                         <div class="row">
                                             <div class="col-12 col-sm-7">
                                                 <div id="profile_picture" class="rounded-4 d-flex justify-content-center align-items-center mb-2">
                                                     <img id="fullprofilePicture" 
-                                                        src="" 
+                                                        src="{% static 'site_pages/empty.jpg' %}"
                                                         class="text-center shadow-5-strong rounded-4 border border-2 border-dark" 
                                                         alt="Profile Picture">
     

@@ -13,8 +13,6 @@ class User(AbstractUser):
             this = User.objects.get(id=self.id)
             if this.photo != self.photo:
                 file_path = os.path.join(MEDIA_ROOT, this.photo.name)
-                print(file_path)
-                print("hello", file_path)
                 os.remove(file_path)
                 this.photo.delete(save=False)
         except Exception as e:

@@ -1,3 +1,4 @@
+var userData = {}
 function changeEditProfilePicture(src){
     const pp = document.getElementById('fullprofilePicture');
     pp.src = src
@@ -11,10 +12,15 @@ function previewPicture(evt){
 };
 async function submitEdit(evt){
     evt.preventDefault();
-    const data = new FormData(evt.target);    
+    const data = new FormData(evt.target);
+    for (const [key, value] of Object.entries(userData)) {
+        if(data.get(key) === value){
+            data.delete(key);
+        }
+    }
     try{
         const result = await fetch(`${api}/accounts/user/`, {
-            method: 'PUT',
+            method: 'PATCH',
             body: data
         });
         if(!result.ok){
@@ -40,7 +46,9 @@ window.onload = async () => {
             throw new Error(result.statusText);
         }
         const json = await result.json();
+        userData = json;
         fillData(json);
+        document.querySelector('#edit_profile').onsubmit=submitEdit
     }catch(err){
         window.location.replace('index');
     }
