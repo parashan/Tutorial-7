@@ -1,4 +1,5 @@
-virtualenv P2
+pip install virtualenv
+python3 -m virtualenv P2
 source P2/bin/activate
 pip install -r requirements.txt
 python manage.py makemigrations
