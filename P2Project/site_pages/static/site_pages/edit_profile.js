@@ -1,13 +1,12 @@
 var userData = {}
 function changeEditProfilePicture(src){
-    const pp = document.getElementById('fullprofilePicture');
-    pp.src = src
+    // Grab the element with id fullprofilePicture 
+    // and change its src attribute
 }
 function previewPicture(evt){
     const [file] = evt.target.files;
     if(file){
         changeEditProfilePicture(URL.createObjectURL(file));
-        // console.log(pp.src);
     }
 };
 async function submitEdit(evt){

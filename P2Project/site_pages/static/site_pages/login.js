@@ -16,15 +16,7 @@ async function submitLogin(event){
         }
         window.location.replace('index');
     }catch(error){
-        const alert = make_alert(error);
-        document.querySelector("#alert-box").append(alert);
-        setTimeout(()=> {
-            progressbar(alert);
-            
-        }, 1000)
-        setTimeout(()=>{
-            document.querySelector('#alert-box').innerHTML = ''
-        }, 4000);
+        
     }
 
     
@@ -47,15 +39,7 @@ async function submitRegister(event){
         }
         window.location.replace('login');
     }catch(error){
-        const alert = make_alert(error);
-        document.querySelector("#alert-box").append(alert);
-        setTimeout(()=> {
-            progressbar(alert);
-            
-        }, 1000)
-        setTimeout(()=>{
-            document.querySelector('#alert-box').innerHTML = ''
-        }, 4000);
+        
     }
 }
 

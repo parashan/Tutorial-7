@@ -1,6 +1,6 @@
 
 window.onload = async () => {
-    activateTypeWriter(["Foods", "Experiences"]);
+    activateTypeWriter();
     try{
         const result = await getUserInfo()
         if(!result.ok){

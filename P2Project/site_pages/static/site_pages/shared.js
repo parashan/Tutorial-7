@@ -36,16 +36,21 @@ function loadNavbar(json){
         const pp = document.getElementById('profilePicture');
         pp.src = json.photo        
     }
-    const welcome = document.getElementById('welcome-navbar');
-    welcome.innerHTML = `Welcome ${json.first_name} ${json.last_name}`;
+    // Add lines of code below so that the welcome-navbar element has 
+    // "Welcome {First Name} {Last Name}"
+    
+    // END
+
     const signout = document.getElementById('signout');
     signout.innerHTML = "Sign out";
     signout.onclick=logout;
     
 }
 function loadNavbarGuest(){
-    const welcome = document.getElementById('welcome-navbar');
-    welcome.innerHTML = "Welcome Guest";
+    // Add lines of code below so that the welcome-navbar element has 
+    // "Welcome guest"
+    
+    // END
     const signout = document.getElementById('signout');
     signout.innerHTML = "Log in";
     signout.href='login';
@@ -60,7 +65,8 @@ function fillData(json){
     document.querySelector('#inputfname').value = json.first_name;
     document.querySelector('#inputlname').value = json.last_name;
 }
-function activateTypeWriter(dataText){
+// https://css-tricks.com/snippets/css/typewriter-effect/
+function activateTypeWriter(dataText=[]){
 
     //array with texts to type in typewriter
     // if(!document.querySelector(".typewriter")) return;
