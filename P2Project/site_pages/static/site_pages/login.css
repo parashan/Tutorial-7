@@ -1,0 +1,7 @@
+html, body{
+    height: 100%;
+}
+.form-group{
+    margin-bottom: 10px;
+}
+/* https://css-tricks.com/snippets/css/typewriter-effect/ */
